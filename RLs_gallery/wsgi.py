@@ -1,5 +1,5 @@
 """
-WSGI config for Rls_gallery project.
+WSGI config for RLs_gallery project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Rls_gallery.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'RLs_gallery.settings')
 
 application = get_wsgi_application()
