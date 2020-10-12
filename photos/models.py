@@ -9,23 +9,22 @@ class Image(models.Model):
     date = models.DateTimeField(auto_now_add=True)
 
     def save_image(self):
-        """
-        This is the function that we will use to save the instance of this class
-        """
+       
         self.save()
 
     def delete_image(self):
-        """
-        This is the function that we will use to delete the instance of this class
-        """
+       
         Image.objects.get(id = self.id).delete()
 
 
     def update_image(self,val):
-        """
-        This is the method to update the instance
-        """
+       
         Image.objects.filter(id = self.id).update(name = val)
+
+    @classmethod
+    def get_image_by_id(cls,image_id):
+       
+        return cls.objects.get(id = image_id)
 
     def __str__(self):
         return self.title
