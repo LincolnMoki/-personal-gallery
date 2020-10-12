@@ -8,6 +8,7 @@
 {% include "photos/navbar.html" %}
     <h2>Welcome to Images</h2>
     {% if images %}
+    <div class="landing">
     <div class="container">
         <div class="row">
             {% for image in images %}
@@ -18,7 +19,8 @@
             </div>                      
             {% endfor %}
         </div>    
-    </div>      
+    </div>
+</div>      
     {% endif %}
     
 {% endblock content %}

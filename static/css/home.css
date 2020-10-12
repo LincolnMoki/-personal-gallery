@@ -1,0 +1,9 @@
+.home {
+    background: url(../../media/images/Seoul.mp4);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+    background-attachment: fixed;
+    width: 100%;
+}
