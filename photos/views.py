@@ -4,7 +4,7 @@ import datetime as dt
 from .models import Image
 def welcome(request):
     title = 'welcome'
-    Image = Image.objects.all()
+    images = Image.objects.all()
     return render(request,'photos/home.html', {'title': title, 'images':images})
 
 
