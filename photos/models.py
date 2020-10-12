@@ -21,6 +21,12 @@ class Image(models.Model):
         Image.objects.get(id = self.id).delete()
 
 
+    def update_image(self,val):
+        """
+        This is the method to update the instance
+        """
+        Image.objects.filter(id = self.id).update(name = val)
+
     def __str__(self):
         return self.title
 
