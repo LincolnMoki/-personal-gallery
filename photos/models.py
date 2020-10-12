@@ -1,11 +1,53 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
+import datetime as dt
+
+
+class Location(models.Model):
+   
+    name = models.CharField(max_length = 30)
+
+    def save_location(self):
+
+        self.save()
+
+    def delete(self):
+       
+        self.delete()
+
+    def update(self,field,val):
+        
+        Location.objects.get(id = self.id).update(field = val)
+
+    def __str__(self):
+        return self.name
+
+
+class Category(models.Model):
+    
+    name = models.CharField(max_length = 30)
+    def save_category(self):
+      
+        self.save()
+
+    def delete(self):
+       
+        Category.objects.get(id = self.id).delete()
+
+    def update(self,field,val):
+       
+        Category.objects.get(id = self.id).update(field = val)
+
+    def __str__(self):
+        return self.name
+
+
 class Image(models.Model):
     title = models.CharField(max_length=100)
     image = CloudinaryField('image')    
-    description = models.CharField(max_length =100)
-    categorytags = models.ManyToManyField(Category)
-    locationtags = models.ManyToManyField(Location)
+    description = models.TextField()
+    location = models.ForeignKey(Location,on_delete=models.CASCADE)
+    category = models.ForeignKey(Category,on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
 
     def save_image(self):
@@ -45,45 +87,4 @@ class Image(models.Model):
     class Meta:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
         verbose_name_plural='images'
 
-    @classmethod
-    def search_by_title(cls,search_term):
-        photos = cls.objects.filter(title__icontains=search_term)
-        return photos     
-
-class Location(models.Model):
    
-    name = models.CharField(max_length = 30)
-
-    def save_location(self):
-
-        self.save()
-
-    def delete(self):
-       
-        self.delete()
-
-    def update(self,field,val):
-        
-        Location.objects.get(id = self.id).update(field = val)
-
-    def __str__(self):
-        return self.name
-
-
-class Category(models.Model):
-    
-    name = models.CharField(max_length = 30)
-    def save_category(self):
-      
-        self.save()
-
-    def delete(self):
-       
-        Category.objects.get(id = self.id).delete()
-
-    def update(self,field,val):
-       
-        Category.objects.get(id = self.id).update(field = val)
-
-    def __str__(self):
-        return self.name

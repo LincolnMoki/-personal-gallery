@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, Http404
 import datetime as dt
-from .models import Image
+from .models import Image,Location,Category
 def welcome(request):
     title = 'welcome'
     images = Image.objects.all()
@@ -28,4 +28,4 @@ def photos(request,photos_id):
     return render(request,"photos/photos.html", {"photos":photos})    
 
 
- def category(request)    
+   
