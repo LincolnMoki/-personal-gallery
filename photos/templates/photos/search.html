@@ -12,3 +12,12 @@
   </div>
 
   <div class="row">
+ 
+  {% if photos% %}
+    {% for photo in photos %}
+      <div class="col-sm-6 col-md-3">
+            
+        <a href=""  data-toggle="modal" data-target="#exampleModal"><img src="{{photo.photo_image.url}}"  class="img-responsive" alt=""></a>
+
+            
+      </div>  
