@@ -1,10 +1,10 @@
 from django.urls import path
-from .views import welcome
+from . import views
 urlpatterns = [
-    path('',welcome, name='home'),
-    #path('search/',views.search name='search')
+    path('',views.welcome, name='home'),
+    path('search/',views.search, name='search'),
+    path('photos/(\d+)',views.photos,name ='photos')
    
 ]
 
-#if settings.DEBUG:
-    #urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
