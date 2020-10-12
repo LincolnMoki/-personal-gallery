@@ -14,7 +14,11 @@ class Image(models.Model):
         """
         self.save()
 
-    
+    def delete_image(self):
+        """
+        This is the function that we will use to delete the instance of this class
+        """
+        Image.objects.get(id = self.id).delete()
 
 
     def __str__(self):
