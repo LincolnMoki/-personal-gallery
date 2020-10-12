@@ -19,3 +19,10 @@ def search(request):
             message = "No images found"
             return render(request, "search.html", {"images":[],"message":message,"title":term.capitalize()})
     
+  
+def photos(request,photos_id):
+    try:
+        photos = Photos.objects.get(id = photos_id)
+    except DoesNotExist:
+        raise Http404()
+    return render(request,"gallery/photos.html", {"photos":photos})    
