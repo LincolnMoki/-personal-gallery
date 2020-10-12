@@ -13,7 +13,8 @@
             {% for image in images %}
             <div class="col-md-4">
                 <p>{{image.title }}</p>
-                <img src="{{image.image.url}}" alt="{{image.title}}">
+                <img src="{{image.image.url}}" alt="{{image.title}}"
+                height="350" width="100%" title="{{image.title}}">
             </div>                      
             {% endfor %}
         </div>    
