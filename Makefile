@@ -12,3 +12,6 @@ collectstatic:
 
 app:
 	./manage.py startapp $(name)
+
+superuser:
+	./manage.py createsuperuser --username $(name)
