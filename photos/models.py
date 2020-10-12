@@ -19,4 +19,23 @@ class Image(models.Model):
     @classmethod
     def search_by_title(cls,search_term):
         photos = cls.objects.filter(title__icontains=search_term)
-        return photos                                                                   
+        return photos     
+
+class Location(models.Model):
+   
+    name = models.CharField(max_length = 30)
+
+    def save_location(self):
+
+        self.save()
+
+    def delete(self):
+       
+        self.delete()
+
+    def update(self,field,val):
+        
+        Location.objects.get(id = self.id).update(field = val)
+
+    def __str__(self):
+        return self.name
