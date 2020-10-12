@@ -6,7 +6,18 @@
 
 
 {% block content %}
-    {{ block.super }}
-    <h2>welcome to homepage</h2>
+    <h2>Welcome to Images</h2>
+    {% if images %}
+    <div class="container">
+        <div class="row">
+            {% for image in images %}
+            <div class="col-md-4">
+                <p>{{image.title }}</p>
+                <img src="{{image.image.url}}" alt="{{image.title}}">
+            </div>                      
+            {% endfor %}
+        </div>    
+    </div>      
+    {% endif %}
     
 {% endblock content %}
