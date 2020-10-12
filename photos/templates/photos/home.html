@@ -1,11 +1,12 @@
-{% extends "base.html" %}
+{% extends 'photos/base.html' %}
 
 {% block style %}
-    {{ block super }}
+    {{ block.super }}
 {% endblock style %}
 
 
-{% block style %}
-    {{ block super }}
+{% block content %}
+    {{ block.super }}
+    <h2>welcome to homepage</h2>
     
-{% endblock style %}
+{% endblock content %}

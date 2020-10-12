@@ -6,16 +6,15 @@
     {% if title %}
         <title>{{title}}</title>
     {% else %}
-        <title>{{home}}</title>
+        <title>welcome home!</title>
     {% endif %}
     {% block stlye %}
         <link rel="stylesheet" href=".css,styles.css">
-    {% endblock style%}    
-
+    {% endblock %}    
 </head>
 <body>
     {% block content %}
-
+        <h1>this is the basefile</h1>
     {% endblock content %}
 </body>
 </html>
