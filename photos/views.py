@@ -8,7 +8,7 @@ def welcome(request):
     return render(request,'photos/home.html', {'title': title, 'images':images})
 
 
-def search(request):
+def search_image(request):
     if "term" in request.GET and request.GET["term"]:
         term = request.GET.get("term")
         image = Image.search_image(term)

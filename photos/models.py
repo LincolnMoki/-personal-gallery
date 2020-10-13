@@ -73,11 +73,11 @@ class Image(models.Model):
         return cls.objects.all()
 
     @classmethod
-    def search_image(cls,category):
+    def search_image(cls,title):
        
         try:   
-            searched_category = Category.objects.filter(name__icontains  = category)[0]
-            return cls.objects.filter(category_id = searched_category.id)
+            searched_title = Title.objects.filter(name__icontains  = title)[0]
+            return cls.objects.filter(title_id = searched_title.id)
         except Exception:
             return "No images found"    
 
